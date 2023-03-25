@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+:root {
+  --ungu: #720060;
+  --ungu-secondary: #fde2ff;
+  --biru: #002772;
+  --biru-secondary: #d6e6ff;
+  --hitam: #1e1e1e;
+  --abu: #3f3f3f;
+  --abu-secondary: #dcdcdc;
+  --bg: #ffffff;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.product .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 67%;
+  width: 100%;
+  z-index: -99;
+  top: 0;
+  position: absolute;
+}
+.card {
+  display: flex;
+  padding: 20px;
+  width: 1000px;
+  height: 520px;
+  background-color: var(--bg);
+  border-radius: 0.6rem;
+  box-shadow: 0px 0px 10px rgba(30, 30, 30, 0.5);
+}
+.card .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+}
+.card .image img {
+  width: 200px;
+}
+.card .content {
+  width: 600px;
+  text-align: left;
+}
+.card .content h1 {
+  font-size: 28px;
+  margin-top: 2.5rem;
+  height: 50px;
+  font-weight: 600;
+}
+.text-men {
+  color: var(--biru);
+}
+.text-women {
+  color: var(--ungu);
+}
+.text-white {
+  color: var(--bg);
+}
+.border-men {
+  border: 1px solid var(--biru);
+}
+.border-women {
+  border: 1px solid var(--ungu);
+}
+.bg-men {
+  background-color: var(--biru);
+}
+.bg-women {
+  background-color: var(--ungu);
+}
+.card .content .description {
+  height: 210px;
+  padding: 0 20px 0 0;
+  overflow-y: scroll;
+  font-weight: 400;
+}
+.card .content p {
+  font-size: 20px;
+}
+.card .content .line {
+  width: 600px;
+  height: 2px;
+  background-color: var(--abu-secondary);
+}
+.card .content .price {
+  font-size: 28px;
+  padding-top: 1rem;
+  font-weight: 600;
+}
+.card .content .container-btn {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.card .content .btn {
+  text-align: center;
+  line-height: 40px;
+  width: 259px;
+  height: 42px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.card .content .category {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  justify-content: space-between;
+}
+.card .content .category .rating {
+  display: flex;
+  align-items: center;
+}
+.card .content .category p {
+  font-size: 18px;
+  margin-right: 4px;
+  color: var(--abu);
+}
+.card .content .category .rating span {
+  margin-left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+.blank-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.blank-img img {
+  position: absolute;
+  scale: 1.2;
+}
+.blank-img p {
+  font-size: 20px;
+  font-weight: 400;
+}
+.blank-btn {
+  z-index: 99;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 7px 120px;
+  border: 1px solid var(--abu);
+  border-radius: 5px;
+  background-color: var(--bg);
+  cursor: pointer;
+}
