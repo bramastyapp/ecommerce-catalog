@@ -1,8 +1,17 @@
 <template>
   <!-- <PageLoader /> -->
+  <div class="product" v-if="loading">
+    <div class="container blank-latar"></div>
+    <div class="card">
+      <div class="page-loader">
+        <div class="loader"></div>
+        <!-- <h1>Loading...</h1> -->
+      </div>
+    </div>
+  </div>
   <div
     class="product"
-    v-if="
+    v-else-if="
       products.category.includes('men') || products.category.includes('women')
     "
   >
@@ -95,27 +104,37 @@
 </template>
 
 <script>
-// import PageLoader from "./components/PageLoader.vue";
-import axios from "axios";
 export default {
   data() {
     return {
       products: [],
       index: 0,
       ratings: [1, 2, 3, 4, 5],
+      loading: false,
     };
   },
   methods: {
-    getCatalog() {
+    async callAPI() {
+      const url = await fetch(
+        `https://fakestoreapi.com/products/${this.index}`
+      );
+      const result = await url.json();
+      return result;
+    },
+    async getCatalog() {
+      this.loading = true;
+
       this.index++;
       if (this.index > 20) {
         this.index = 1;
       }
-      const url = `https://fakestoreapi.com/products/${this.index}`;
-      axios.get(url).then((res) => {
-        this.products = res.data;
-        console.log(res.data);
-      });
+      try {
+        let data = await this.callAPI();
+        this.products = data;
+      } catch (error) {
+        console.log("Error API", error);
+      }
+      this.loading = false;
     },
   },
 
